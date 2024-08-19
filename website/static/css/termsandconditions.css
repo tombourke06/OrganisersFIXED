@@ -1,0 +1,151 @@
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
+background-size: 500% 500%;
+animation: gradientBackground 40s ease infinite;
+
+}
+header {
+    background: #333;
+    color: #000000;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    color: red;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+ul {
+    padding-left: 20px;
+    color: black;
+}
+
+li {
+    margin-bottom: 10px;
+    color: black;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Adding some interactivity */
+.menu-toggle span {
+    font-size: 2em;
+    color: #fff;
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: #1e1e1e;
+    color: #bbb;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+footer p a {
+    color: #f44336;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Organisers - Reviews</title>
+    <link rel="stylesheet" href="../static/css/review.css">
+    <link rel="stylesheet" href="../static/css/NavBar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header>
+        <nav class="navbar">
+            <div class="logo">3-D Organisers</div>
+            <ul class="nav-links">
+               <li><a href="{{ url_for('index')}}">Home</a></li>
+                <li><a href="{{ url_for('products')}}">Products</a></li>
+                <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+                <li><a href="{{ url_for('contact')}}">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h2>Submit Your Review</h2>
+            <form action="{{ url_for('reviews_page') }}" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="product">Product:</label>
+                <select id="product" name="product" required>
+                    <option value="" disabled selected>--Select Product--</option>
+                    <option value="Heart">Heart</option>
+                    <option value="Lungs">Lungs</option>
+                    <option value="Bladder">Bladder</option>
+                    <option value="Kidney">Kidney</option>
+                    <option value="Liver">Liver</option>
+                    <option value="Pancreas">Pancreas</option>
+                </select>
+
+                <label for="rating">Rating (1-5):</label>
+                <select id="rating" name="rating" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="review">Your Review:</label>
+                <textarea id="review" name="review" rows="5" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+
+        <!-- Reviews Display -->
+        <div class="reviews-container">
+            <h2>Customer Reviews</h2>
+            <div id="reviews-list">
+                {% for review in reviews %}
+                <div class="review-item">
+                    <h3>{{ review.name }}</h3>
+                    <p><span>Product:</span> {{ review.product }}</p>
+                    <p><span>Rating:</span> {{ review.rating }}/5</p>
+                    <p><span>Review:</span> {{ review.review }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</body>
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<footer>
+    <p>&copy; 2024 3D Organisers. All rights reserved.</p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
+
+</html>

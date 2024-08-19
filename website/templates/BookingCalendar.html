@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Your Appointment</title>
+    <link rel="stylesheet" href="../static/css/BookingCalendar.css">
+    <link rel="stylesheet" href="../static/css/NavBar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="path/to/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <header>
+        <nav class="navbar">
+            <div class="logo">3-D Organisers</div>
+            <ul class="nav-links">
+                <li><a href="../templates/HomePage.html">Home</a></li>
+                <li><a href="../templates/organ_options.html">Products</a></li>
+                <li><a href="../templates/aboutus.html">About Us</a></li>
+                <li><a href="../templates/contactinfo.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+    <style>
+        body {
+            font-family: Orbitron, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
+            background-size: 500% 500%;
+            animation: gradientBackground 40s ease infinite;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        .booking-container {
+            background-color: #1F1F1F;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            z-index: 1;
+            position: relative;
+            color: black;
+            animation: fadeInUp 1s ease-in-out;
+
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #f44336;
+            font-size: 40px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            color: #f44336;
+            font-size: 25px;
+        }
+        input[type="date"],
+        select {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background: linear-gradient(45deg, #f44336, #e53935);
+            color: #FFFFFF;
+            padding: 10px;
+            border: none;
+            font-size: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #d32f2f, #c62828);
+        }
+
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle Effect Background -->
+    <div id="particles-js"></div>
+
+    <main>
+        <div class="booking-container">
+            <h1>Book Your Appointment</h1>
+            <form method="POST">
+                <label for="appointmentDate">Select Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+                <label for="appointmentTime">Select Time:</label>
+                <select id="appointmentTime" name="appointmentTime" required>
+                    <option value="">09:00</option>
+                    <option value="">10:00</option>
+                    <option value="">11:00</option>
+                    <option value="">12:00</option>
+                    <option value="">13:00</option>
+                    <option value="">14:00</option>
+                    <option value="">15:00</option>
+                    <option value="">16:00</option>
+                    <option value="">17:00</option>
+                    <option value="">18:00</option>
+                </select>
+
+                <label for="appointmentLocation">Select Location:</label>
+                <select id="appointmentLocation" name="appointmentLocation" required>
+                    <option value="">Ballinasloe</option>
+                    <option value="">Galway</option>
+                    <option value="">Dublin</option>
+                    <option value="">Cork</option>
+                    <option value="">Belfast</option>
+                </select>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 120,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFFFFF"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#FFFFFF"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 250,
+                    "color": "#FFFFFF",
+                    "opacity": 1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                }
+            },
+        });
+    </script>
+</body>
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<footer>
+    <p>&copy; 2024 3D Organisers. All rights reserved.</p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
+
+</html>

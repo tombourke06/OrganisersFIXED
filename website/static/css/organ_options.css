@@ -1,0 +1,128 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background-color: #00FFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
+    background-size: 500% 500%;
+    animation: gradientBackground 30s ease infinite;
+}
+
+/* Main Content */
+main {
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.large {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF2400;
+    padding: 10px 20px;
+    background-color: #000000;
+    display: inline-block;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    justify-items: center;
+    margin-top: 50px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    width: 315px;
+    height: 265px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.image-title {
+    margin-top: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    color: #000000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: #000000;
+    color: #bbb;
+    border-top: 1px solid #333;
+    margin-top: 40px;
+}
+
+footer p a {
+    color: #f44336;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+/* Particles.js Background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Animations */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

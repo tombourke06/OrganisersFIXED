@@ -1,0 +1,224 @@
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    top: 0vh;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+    color: black;
+    font-family: 'Orbitron', sans-serif;
+
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+.nav-links li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.1em;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
+
+}
+
+.nav-links li a:hover {
+    color: black;
+    background-color: #f44336;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"poppins",sans-serif;
+}
+body{
+    background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
+    background-size: 500% 500%;
+    animation: gradientBackground 40s ease infinite;
+}
+.container{
+    background:#fff;
+    width:450px;
+    padding:1.5rem;
+    margin:50px auto;
+    border-radius:10px;
+    box-shadow:0 20px 35px rgba(0,0,1,0.9);
+    z-index: 1000;
+}
+form{
+    margin:0 2rem;
+}
+.form-title{
+    font-size:1.5rem;
+    font-weight:bold;
+    text-align:center;
+    padding:1.3rem;
+    margin-bottom:0.4rem;
+    z-index: 1;
+}
+input{
+    color:black;
+    width:100%;
+    background-color:transparent;
+    border:none;
+    border-bottom:1px solid #757575;
+    padding-left:1.5rem;
+    font-size:15px;
+}
+.input-group{
+    padding:1% 0;
+    position:relative;
+
+}
+.input-group i{
+    position:absolute;
+    color:black;
+}
+input:focus{
+    background-color: transparent;
+    outline:transparent;
+    border-bottom:2px solid hsl(327,90%,28%);
+}
+
+
+    .navbar ul.active {
+        display: flex;
+    };
+}
+label{
+    color:#757575;
+    position:relative;
+    left:1.2em;
+    top:-1.3em;
+    cursor:auto;
+    transition:0.3s ease all;
+
+
+}
+input:focus~label,input:not(:placeholder-shown)~label{
+    top:-3em;
+    color:hsl(327,90%,28%);
+    font-size:15px;
+}
+.recover{
+    text-align:right;
+    font-size:1rem;
+    margin-bottom:1rem;
+
+}
+.recover a{
+    text-decoration:none;
+    color:red;
+}
+.recover a:hover{
+    color:red;
+    text-decoration:underline;
+}
+.btn{
+    font-size:1.1rem;
+    padding:8px 0;
+    border-radius:5px;
+    outline:none;
+    border:none;
+    width:100%;
+    background:red;
+    color:white;
+    cursor:pointer;
+    transition:0.9s;
+    z-index: 1000;
+
+}
+.btn:hover{
+    background:#07001f;
+}
+.or{
+    font-size:1.1rem;
+    margin-top:0.5rem;
+    text-align:center;
+}
+.icons{
+    text-align:center;
+    color: black
+
+}
+.icons i{
+    color:red;
+    padding:0.8rem 1.5rem;
+    border-radius:10px;
+    font-size:1.5rem;
+    cursor:pointer;
+    border:2px solid #dfe9f5;
+    margin:0 15px;
+    transition:1s;
+
+}
+.icons i:hover{
+    background:#07001f;
+    font-size:1.6rem;
+    border:2px solid rgb(125,125,235);
+}
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 4rem;
+    margin-top:0.9rem;
+    font-weight:bold;
+    color: #000000;
+}
+button{
+    color:red;
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+    z-index: 1000;
+
+}
+button:hover{
+    text-decoration:underline;
+    color:red;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Organisers</title>
+    <link rel="stylesheet" href="../static/css/HomePage.css">
+    <link rel="stylesheet" href="../static/css/NavBar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="path/to/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../Javascript/HomePage.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">3-D Organisers</div>
+            <ul class="nav-links">
+                <li><a href="../templates/HomePage.html">Home</a></li>
+                <li><a href="../templates/organ_options.html">Products</a></li>
+                <li><a href="../templates/aboutus.html">About Us</a></li>
+                <li><a href="../templates/contactinfo.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div id="particles-js"></div> <!-- Particle Effect Background -->
+            <div class="hero-content">
+                <h1>Transforming Healthcare</h1>
+                <p>Explore innovative solutions with 3-D Organisers.</p>
+                <div class="buttons">
+                    <a href="../templates/signin.html" class="btn primary-btn">Sign In</a>
+                    <a href="../templates/ordernow.html" class="btn secondary-btn">Order Now</a>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <a href="#products"><span>&#8675;</span> Scroll Down</a>
+            </div>
+        </section>
+
+       <!-- Products Section -->
+<section id="products" class="products">
+    <div class="product-card">
+        <iframe src="https://www.youtube.com/embed/Y-ntiRHsO8I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h2>Tech Innovations</h2>
+        <p>Discover the latest in technology with this in-depth video.</p>
+    </div>
+    <div class="product-card">
+        <iframe src="https://www.youtube.com/embed/J4uidJgq7gA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h2>Future Insights</h2>
+        <p>Watch our insights on upcoming trends and innovations.</p>
+    </div>
+</section>
+
+        <!-- Check Out Our Merch Section -->
+<section id="merch" class="merch-section">
+    <h2>Check Out Our Merch</h2>
+    <div class="merch-icon">
+    </div>
+    <a href="{{ url_for('merch')}}" class="btn secondary-btn">Shop Now</a>
+</section>
+
+</section>
+
+            </div>
+        </section>
+    </main>
+
+    <head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<footer>
+    <p>&copy; 2024 3D Organisers. All rights reserved.</p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 120,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFFFFF"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#FFFFFF"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.7,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 10,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 250,
+                    "color": "#FFFFFF",
+                    "opacity": 0.7,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+        });
+    </script>
+</body>
+</html>

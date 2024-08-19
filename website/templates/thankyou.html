@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - 3D Organisers</title>
+   <link rel="stylesheet" href="../static/css/thankyou.css">
+    <link rel="stylesheet" href="../static/css/NavBar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="path/to/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">3-D Organisers</div>
+            <ul class="nav-links">
+               <li><a href="{{ url_for('index')}}">Home</a></li>
+                <li><a href="{{ url_for('products')}}">Products</a></li>
+                <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+                <li><a href="{{ url_for('contact')}}">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="thank-you-message">
+            <h2>Thank You!</h2>
+            <p>We have received your message and will get back to you as soon as possible.</p>
+            <p><a href="{{url_for('index')}}">Return to Home</a></p>
+        </section>
+    </main>
+    <head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<footer>
+    <p>&copy; 2024 3D Organisers. All rights reserved.</p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
+
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 120,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFFFFF"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#FFFFFF"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 250,
+                    "color": "#FFFFFF",
+                    "opacity": 1,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                }
+            },
+        });
+    </script>
+</body>
+</html>

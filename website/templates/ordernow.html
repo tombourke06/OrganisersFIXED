@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/NavBar.css">
+    <link rel="stylesheet" href="../static/css/organs css/bladder.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>3D Organisers</title>
+    <link rel="icon" href="path/to/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../Javascript/HomePage.js" defer></script>
+</head>
+<body>
+<div id="particles-js"></div> <!-- Particle Effect Background -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">3-D Organisers</div>
+            <ul class="nav-links">
+                <li><a href="../templates/HomePage.html">Home</a></li>
+                <li><a href="../templates/organ_options.html">Products</a></li>
+                <li><a href="../templates/aboutus.html">About Us</a></li>
+                <li><a href="../templates/contactinfo.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" aria-label="Toggle navigation">
+                <span>&#9776;</span>
+            </div>
+        </nav>
+    </header>
+</body>
+
+
+
+    <style>
+        /* Ensure the particles canvas is positioned at the background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Send particles to the background */
+            top: 0;
+            left: 0;
+        }
+
+        /* Make sure the container is above the particles background */
+        .container {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 100px auto;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adjust form styles for better presentation */
+        .order-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .order-form select, .order-form textarea, .order-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .order-form button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        .order-form button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .navbar ul {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+<body>
+
+    <div class="container">
+        <h2>Customize Your Organ</h2>
+        <form class="order-form" action="#" method="post">
+            <label for="size">Select Organ:</label>
+            <select id="size" name="size" required>
+                <option value="">--Select Organ--</option>
+                <option value="Heart">Heart</option>
+                <option value="Lungs">Lungs</option>
+                <option value="Bladder">Bladder</option>
+                <option value="Kidney">Kidney</option>
+                <option value="Liver">Liver</option>
+                <option value="Pancreas">Pancreas</option>
+            </select>
+
+            <label for="weight">Insert Your Weight (kgs):</label>
+            <textarea id="weight" name="weight" required></textarea>
+
+            <label for="height">Insert Your Height (cm):</label>
+            <textarea id="height" name="height" required></textarea>
+
+            <label for="color">Select Your Preferred Colour:</label>
+            <select id="color" name="color" required>
+                <option value="">--Select Your Preferred Colour--</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+
+            <button type="submit">Add to Cart</button>
+        </form>
+    </div>
+
+    <!-- Particles.js Configuration -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 120,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#FFFFFF"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#FFFFFF"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.7,
+                    "random": false,
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 250,
+                    "color": "#FFFFFF",
+                    "opacity": 0.7,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 3,
+                    "direction": "none",
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<footer>
+    <p>&copy; 2024 3D Organisers. All rights reserved.</p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - 3D Organisers</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="../static/css/Your_Cart.css">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Pop-up code */
+        .popup {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            user-select: none;
+        }
+        .popup .popuptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -80px;
+        }
+        .popup .popuptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+        .popup .show {
+            visibility: visible;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="navbar">
+            <h1 class="logo">3D Organisers</h1>
+            <ul class="nav-links">
+                 <li><a href="../templates/HomePage.html">Home</a></li>
+                <li><a href="../templates/organ_options.html">Products</a></li>
+                <li><a href="../templates/aboutus.html">About Us</a></li>
+                <li><a href="../templates/contactinfo.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <h1>Your Cart<i class="fa-solid fa-cart-plus"></i></h1>
+            <p>Organ: {{ organ }}</p>
+            <p>Weight: {{ weight }}</p>
+            <p>Height: {{ height }}</p>
+            <p>Color: {{ color }}</p>
+
+            <!-- Cart items will be dynamically inserted here -->
+            <div class="cart-total">
+                <p>Total: $<span id="total-amount">0.00</span></p>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+
+        <!-- Pop-up functionality -->
+        <div class="popup" onclick="myFunction()">Submit
+            <span class="popuptext" id="myPopup">Order Sent</span>
+        </div>
+    </main>
+
+    <script>
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
+</body>
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+</head>
+<footer>
+    <p>&copy; 2024 3D Organisers. All rights reserved.</p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
+
+</html>

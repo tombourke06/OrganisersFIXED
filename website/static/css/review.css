@@ -1,0 +1,155 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background-color: #1f1f1f;
+    line-height: 1.6;
+    overflow-x: hidden;
+    text-align: center;
+    position: relative;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #FF2400;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+/* Main Content */
+main {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Container */
+.container {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.container label {
+    font-family: 'Roboto', sans-serif;
+    color: #ddd;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.container input, .container select, .container textarea, .container button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.container input, .container select, .container textarea {
+    background-color: #444;
+    color: #fff;
+}
+
+.container button {
+    background-color: #FF2400;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container button:hover {
+    background-color: #e51b00;
+}
+
+/* Reviews Display */
+.reviews-container {
+    background-color: rgba(50, 50, 50, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.review-item {
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.review-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #FF2400;
+    margin-bottom: 10px;
+}
+
+.review-item p {
+    font-size: 18px;
+    color: #bbb;
+    margin: 5px 0;
+}
+
+.review-item span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Header and Navigation */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+    color: #f44336;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1.1em;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    background-color: #f44336;
+}
+
+.menu-toggle {
+    display: none;
+}
