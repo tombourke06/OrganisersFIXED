@@ -252,7 +252,7 @@ main {
     position: relative;
     text-align: center;
     padding: 80px 5%;
-    background: linear-gradient(270deg, #FF6347, #FF4500, #FF7F50, #FF6347, #FF4500, #FF6347, #FF7F50, #FF4500, #FF6347, #FF7F50, #FF6347);
+    background: linear-gradient(270deg,  #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
     background-size: 500% 500%;
     animation: gradientBackground 15s ease infinite;
     color: #fff;
