@@ -15,10 +15,10 @@
         <nav class="navbar">
             <div class="logo">3-D Organisers</div>
             <ul class="nav-links">
-                <li><a href="HomePage.html">Home</a></li>
-                <li><a href="organ_options.html">Products</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="contactus.html" class="active">Contact</a></li>
+               <li><a href="{{ url_for('index')}}">Home</a></li>
+               <li><a href="{{ url_for('products')}}">Products</a></li>
+               <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+               <li><a href="{{ url_for('contact')}}">Contact</a></li>
             </ul>
             <div class="menu-toggle" aria-label="Toggle navigation">
                 <span>&#9776;</span>
@@ -37,7 +37,7 @@
         <section class="contact-form">
             <h2>Contact Us</h2>
             <p>If you have any questions or need more information, please feel free to reach out to us using the form below:</p>
-            <form method="post" action="{{url_for('enter_message')}}">
+            <form method="post" action="{{url_for('enter_details')}}">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
