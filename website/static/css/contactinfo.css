@@ -152,8 +152,9 @@ main {
     background: linear-gradient(45deg, #d32f2f, #c62828);
 }
 
-/* Footer */
 footer {
+    position: relative;
+    z-index: 1;
     text-align: center;
     padding: 20px 5%;
     background-color: #1e1e1e;
@@ -171,7 +172,6 @@ footer p a:hover {
     text-decoration: underline;
 }
 
-/* Particles.js Background */
 #particles-js {
     position: fixed;
     width: 100%;

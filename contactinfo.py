@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-# Database configuration
+# Database configuration test
 USERNAME = 'root'
 PASSWORD = ''
 HOST = 'localhost'
@@ -33,7 +33,7 @@ class Contact(db.Model):
         self.message = message
 
 
-class Order(db.Model):
+class Organ(db.Model):
     __tablename__ = 'organs'
     id = db.Column(db.Integer, primary_key=True)
     organ = db.Column(db.String(100), nullable=False)
@@ -42,6 +42,27 @@ class Order(db.Model):
     color = db.Column(db.String(100), nullable=False)
 
     def __init__(self, organ, weight, height, color):
+        self.organ = organ
+        self.weight = weight
+        self.height = height
+        self.color = color
+
+class Order(db.Model):
+    __tablename__ = 'orders'
+    id = db.Column(db.Integer, primary_key=True)
+    signin_id = db.Column(db.Integer, db.ForeignKey('signin_id'))
+    organ_id = db.Column(db.Integer, db.ForeignKey('organ_id'))
+    organ = db.Column(db.String(100), nullable=False)
+    weight = db.Column(db.String(100), nullable=False)
+    height = db.Column(db.String(100), nullable=False)
+    color = db.Column(db.String(100), nullable=False)
+
+    user = db.relationship('signin', back_populates='order')
+    organ = db.relationship('organs', back_populates='order')
+
+    def __init__(self, organ, weight, height, color, signin_id, organ_id):
+        self.signin_id = signin_id
+        self.organ_id = organ_id
         self.organ = organ
         self.weight = weight
         self.height = height
@@ -88,7 +109,7 @@ def merch():
     return render_template('merch.html')
 @app.route('/3D Organisers - termsandconditions')
 def termsandconditions():
-    return render_template('termsandconditions.html')
+    return render_template('termsandcomnditions.html')
 
 @app.route('/3D Organisers - purchase')
 def purchase():
@@ -156,8 +177,15 @@ def thankyou():
     return render_template('thankyou.html')
 
 @app.route('/Register & Login')
-def signin():
+def sign_in():
     return render_template('signin.html')
+
+
+@app.route('/Sign Up')
+def sign_up():
+    return render_template('signup.html')
+
+
 
 
 # Define the route to handle form submission
