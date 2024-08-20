@@ -88,7 +88,7 @@ def merch():
     return render_template('merch.html')
 @app.route('/3D Organisers - termsandconditions')
 def termsandconditions():
-    return render_template('termsandcomnditions.html')
+    return render_template('termsandconditions.html')
 
 @app.route('/3D Organisers - purchase')
 def purchase():
