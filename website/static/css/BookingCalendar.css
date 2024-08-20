@@ -53,3 +53,21 @@ header {
 .menu-toggle {
     display: none;
 }
+button {
+    background: #f44336; /* Solid red background */
+    color: #FFFFFF; /* White text */
+    padding: 15px; /* Increased padding for better feel */
+    border: none;
+    font-size: 20px; /* Larger text for emphasis */
+    font-weight: bold; /* Bold text */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+button:hover {
+    background: #d32f2f; /* Slightly darker red on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}

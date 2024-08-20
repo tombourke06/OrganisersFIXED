@@ -70,7 +70,7 @@ animation: gradientBackground 40s ease infinite;
     padding: 10px 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: red;
     outline: none;
 }
 
@@ -83,7 +83,7 @@ animation: gradientBackground 40s ease infinite;
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: red;
+    background-color: red; /* Change initial color to red */
     color: white;
     text-align: center;
     text-transform: uppercase;
@@ -95,7 +95,9 @@ animation: gradientBackground 40s ease infinite;
 }
 
 .confirm-btn:hover {
-    background-color: dodgerblue;
+    background-color: black; /* Change color to black on hover */
+}
+
 }
 #particles-js {
     position: fixed;

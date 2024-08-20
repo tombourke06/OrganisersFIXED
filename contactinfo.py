@@ -50,18 +50,18 @@ class Organ(db.Model):
 class Order(db.Model):
     __tablename__ = 'orders'
     id = db.Column(db.Integer, primary_key=True)
-    signin_id = db.Column(db.Integer, db.ForeignKey('signin_id'))
+    signin_id = db.Column(db.Integer, db.ForeignKey('sign_in_id'))
     organ_id = db.Column(db.Integer, db.ForeignKey('organ_id'))
     organ = db.Column(db.String(100), nullable=False)
     weight = db.Column(db.String(100), nullable=False)
     height = db.Column(db.String(100), nullable=False)
     color = db.Column(db.String(100), nullable=False)
 
-    user = db.relationship('signin', back_populates='order')
-    organ = db.relationship('organs', back_populates='order')
 
-    def __init__(self, organ, weight, height, color, signin_id, organ_id):
-        self.signin_id = signin_id
+
+
+    def __init__(self, organ, weight, height, color, sign_in_id, organ_id):
+        self.signin_id = sign_in_id
         self.organ_id = organ_id
         self.organ = organ
         self.weight = weight
@@ -97,7 +97,7 @@ def index():
 # Define the route for the booking page
 @app.route('/booking')
 def booking():
-    return render_template('booking.html')
+    return render_template('BookingCalendar.html')
 
 
 @app.route('/3D Organisers - order now')
@@ -181,11 +181,9 @@ def sign_in():
     return render_template('signin.html')
 
 
-@app.route('/Sign Up')
+@app.route('/Signin')
 def sign_up():
     return render_template('signup.html')
-
-
 
 @app.route('/Register')
 def Register():
