@@ -81,7 +81,7 @@ footer {
     color: #bbb;
     border-top: 1px solid #333;
     margin-top: 40px;
-    z-index: 1;
+    z-index: 100;
 }
 
 footer p a {
@@ -100,7 +100,7 @@ footer p a:hover {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -50;
 }
 
 /* Animations */

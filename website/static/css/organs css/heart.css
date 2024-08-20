@@ -159,6 +159,7 @@ footer {
     color: #bbb;
     border-top: 1px solid #333;
     margin-top: 40px;
+    z-index: 1;
 }
 
 footer p a {

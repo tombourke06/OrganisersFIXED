@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     color: black;
+    text-align: left;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     background-color: black;
     line-height: 1.6;
     overflow-x: hidden;
-    text-align: center;
+    text-align: left;
     position: relative;
 }
 
@@ -20,6 +21,7 @@ body {
 main {
     padding-top: 100px; /* Adjust padding to avoid overlap with fixed header */
     position: relative;
+    text-align: left;
     z-index: 1;
     animation: fadeInUp 1s ease-in-out;
 }
@@ -28,6 +30,7 @@ main {
     font-family: 'Orbitron', sans-serif;
     font-size: 48px;
     font-weight: bold;
+    text-align: left;
     color: black;
     padding: 40px;
 }
@@ -37,6 +40,8 @@ main {
     display: inline-block;
     margin: 40px;
     vertical-align: top;
+    text-align: left;
+    image-inline: left;
     animation: fadeInUp 1s ease-in-out;
     background-color: black; /* Set the box background to black */
     padding: 20px; /* Add padding inside the container */
@@ -46,18 +51,21 @@ main {
 .image-container img {
     width: 315px;
     height: 265px;
+    text-align: left;
     border-radius: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .image-container img:hover {
     transform: scale(1.05);
+    text-align: left;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Image Title */
 .image-title {
     margin-top: 15px;
+    text-align: left;
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5em;
     color: #ffffff;
