@@ -1,93 +1,98 @@
 /* Base styles */
 body {
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color: #000; /* Changed to black */
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
     background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
-background-size: 500% 500%;
-animation: gradientBackground 40s ease infinite;
-
+    background-size: 500% 500%;
+    animation: gradientBackground 40s ease infinite;
 }
+
 header {
-    background: #333;
-    color: #000000;
-    padding: 10px 0;
-    position: sticky;
     top: 0;
+    position: fixed;
     width: 100%;
-    z-index: 1000;
-}
-
-.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2; /* Ensure the navbar is above other content */
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
+    font-size: 2em;
+    font-weight: 700;
+    color: #f44336;
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.5em;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: #fff;
+.nav-links li a {
+    color: #e0e0e0;
     text-decoration: none;
-    font-weight: 700;
+    padding: 10px;
+    font-size: 1.1em;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    background-color: #f44336;
 }
 
 .menu-toggle {
     display: none;
-    cursor: pointer;
 }
 
-h1, h2 {
-    font-family: 'Orbitron', sans-serif;
-    text-align: center;
-    margin-top: 20px;
-    color: red;
-}
-
+/* Main content area */
 main {
+    position: relative; /* Ensure it's positioned properly in the stacking context */
+    z-index: 1; /* Keep the main content above the particles */
     max-width: 800px;
     margin: 0 auto;
-    padding: 40px;
+    padding: 80px 40px 40px; /* Added top padding to account for the navbar */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-top: 20px;
     text-align: center;
 }
 
-section {
-    margin-bottom: 40px;
-}
-
-ul {
-    padding-left: 20px;
-    color: black;
-}
-
-li {
-    margin-bottom: 10px;
-    color: black;
+h1, h2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #f44336; /* Red headings */
+    margin-top: 20px;
 }
 
 p {
     line-height: 1.6;
     margin-bottom: 20px;
-    color: black;
+    color: #fff; /* White text */
+    text-align: left;
+}
+
+ul, li {
+    list-style: none; /* Remove bullet points */
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #fff; /* White text */
+    text-align: left;
 }
 
 /* Responsive styles */
@@ -104,39 +109,23 @@ p {
     .menu-toggle {
         display: block;
     }
+
+    main {
+        padding: 100px 20px 20px; /* Adjust padding for smaller screens */
+    }
 }
 
-/* Adding some interactivity */
-.menu-toggle span {
-    font-size: 2em;
-    color: #fff;
-}
+/* Particles.js container */
 #particles-js {
-    position: fixed;
+    position: fixed; /* Cover the entire viewport */
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
-}
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px 5%;
-    background-color: #1e1e1e;
-    color: #bbb;
-    border-top: 1px solid #333;
-    margin-top: 40px;
+    z-index: 0; /* Keep particles behind everything */
 }
 
-footer p a {
-    color: #f44336;
-    text-decoration: none;
-}
-
-footer p a:hover {
-    text-decoration: underline;
-}
+/* Animation for background gradient */
 @keyframes gradientBackground {
     0% {
         background-position: 0% 50%;
@@ -148,4 +137,33 @@ footer p a:hover {
         background-position: 0% 50%;
     }
 }
+/* Footer */
+footer {
+    position: relative; /* Ensure proper positioning */
+    z-index: 1; /* Keep the footer above the particles */
+    text-align: center; /* Center the content */
+    padding: 20px 5%;
+    background-color: #1e1e1e; /* Dark footer background */
+    color: #bbb; /* Light gray text */
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Ensure content stacks vertically */
+    align-items: center; /* Center content horizontally */
+}
 
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+footer a:hover {
+    color: #f44336; /* Change icon color on hover */
+}

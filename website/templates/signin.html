@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Register & Login</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/signin.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/NavBar.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../static/css/signin.css">
-    <link rel="stylesheet" href="../static/css/NavBar.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div id="particles-js"></div>
@@ -32,10 +33,10 @@
 
     <div class="container" id="signIn">
         <h1 class="form-title">Sign In</h1>
-        <form method="post" action="register.html">
+        <form method="post" action="{{url_for('signin')}}">
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="username" name="username" id="username" placeholder="Username" required>
+                <input type="text" name="username" id="username" placeholder="Username" required>
                 <label for="username">Username</label>
             </div>
 
@@ -51,65 +52,30 @@
                 <label for="password">Password</label>
             </div>
 
-
             <input type="submit" class="btn" value="Sign In" name="signIn">
         </form>
 
+        <p class="or">----------or----------</p>
+
         <div class="icons">
-            <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=Ab5oB3o3-3YDfpQPQolKvpEFGiAiU_FeUQdsXot6QJfwkfHrg-W62r9DDwUUbdHeed9XenhWXcGBQw&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S70153937%3A1723562050476488&ddm=0" target="_blank">
-            <i class="fab fa-google"></i>
+                        <a href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=158&ct=1724058038&rver=7.0.6738.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26cobrandid%3dab0455a0-8d03-46b9-b18b-df2f57b9e44c%26culture%3den-us%26country%3dus%26RpsCsrfState%3d0abefc95-4596-685a-14fd-3978b3051b03&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=ab0455a0-8d03-46b9-b18b-df2f57b9e44c" target="_blank">
+         <i class="fab fa-microsoft"></i>
             </a>
         </div>
 
         <div class="links">
             <p>Don't have an account yet?</p>
-            <a href="signup.html" id="signUpButton">Sign Up</a>
+           <a href="{{url_for('signup')}}" id="signupButton">Sign Up</a>
         </div>
     </div>
 
     <script src="script.js"></script>
 
 </body>
-<head>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-</head>
 <footer>
     <p>&copy; 2024 3D Organisers. All rights reserved.</p>
-    <p>Follow us on
-        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="{{ url_for('termsandconditions')}}" target="_blank"><i class="fas fa-file-contract"></i></a>
-    </p>
+    <p>Follow us on <a href="#">Twitter</a>, <a href="#">Facebook</a>, and <a href="https://www.instagram.com/3dorganizers/">Instagram</a>,<a href="../templates/termsandcomnditions.html">Terms and Conditions</a></p>
 </footer>
-<style>
-    footer {
-        text-align: center;
-        padding: 10px;
-        background-color: #333;
-        color: white;
-    }
-
-    footer p {
-        margin: 5px 0;
-    }
-
-    footer a {
-        color: white;
-        margin: 0 10px;
-        text-decoration: none;
-        font-size: 1.5em;
-    }
-
-    footer a:hover {
-        color: #f44336; /* Change icon color on hover */
-    }
-</style>
-
 </html>
 <script>
     particlesJS("particles-js", {
