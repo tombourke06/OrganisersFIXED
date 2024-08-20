@@ -97,7 +97,7 @@ def index():
 # Define the route for the booking page
 @app.route('/booking')
 def booking():
-    return render_template('booking.html')
+    return render_template('BookingCalendar.html')
 
 
 @app.route('/3D Organisers - order now')
