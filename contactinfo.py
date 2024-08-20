@@ -176,7 +176,7 @@ def thankyouPurchases():
 def thankyou():
     return render_template('thankyou.html')
 
-@app.route('/Register & Login')
+@app.route('/Login')
 def sign_in():
     return render_template('signin.html')
 
@@ -186,6 +186,10 @@ def sign_up():
     return render_template('signup.html')
 
 
+
+@app.route('/Register')
+def Register():
+    return render_template('signup.html')
 
 
 # Define the route to handle form submission

@@ -75,26 +75,20 @@
         </div>
         <div class="links">
             <p>Have an account ?</p>
-        <a href="signin.html" id="signinButton">Sign In</a>
+        <a href="{{ url_for('signin')}}" id="signinButton">Sign In</a>
         </div>
       </div>
       <script src="script.js"></script>
 
 </body>
-<head>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-</head>
+
 <footer>
     <p>&copy; 2024 3D Organisers. All rights reserved.</p>
     <p>Follow us on
         <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+        <a href="{{ url_for('termsandconditions')}}" target="_blank"><i class="fas fa-file-contract"></i></a>
     </p>
 </footer>
 <style>
