@@ -20,10 +20,10 @@
         <nav class="navbar">
             <div class="logo">3-D Organisers</div>
             <ul class="nav-links">
-                <li><a href="../templates/HomePage.html">Home</a></li>
-                <li><a href="../templates/organ_options.html">Products</a></li>
-                <li><a href="../templates/aboutus.html">About Us</a></li>
-                <li><a href="../templates/contactinfo.html">Contact</a></li>
+                <li><a href="{{ url_for('index')}}">Home</a></li>
+                <li><a href="{{ url_for('products')}}">Products</a></li>
+                <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+                <li><a href="{{ url_for('contact')}}">Contact</a></li>
             </ul>
             <div class="menu-toggle" aria-label="Toggle navigation">
                 <span>&#9776;</span>
@@ -94,7 +94,7 @@
         <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="../templates/termsandcomnditions.html" target="_blank"><i class="fas fa-file-contract"></i></a>
+        <a href="{{ url_for('termsandconditions')}}" target="_blank"><i class="fas fa-file-contract"></i></a>
     </p>
 </footer>
 <style>
