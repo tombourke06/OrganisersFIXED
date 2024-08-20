@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
-# Database configuration
+# Database configuration test
 USERNAME = 'root'
 PASSWORD = ''
 HOST = 'localhost'
