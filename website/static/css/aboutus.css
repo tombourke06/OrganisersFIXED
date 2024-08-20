@@ -170,4 +170,70 @@ footer p a {
 footer p a:hover {
     text-decoration: underline;
 }
+.team {
+    padding: 50px 0;
+    background-color: black;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-member {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 100%;
+}
+
+.team-member img {
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.team-member-info {
+    max-width: 600px;
+}
+
+.team-member-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.team-member-info p {
+    font-size: 1rem;
+    color: white;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column; /* Stack image on top of text on smaller screens */
+        text-align: center;
+    }
+
+    .team-member img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
 
