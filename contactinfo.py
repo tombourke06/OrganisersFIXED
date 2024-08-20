@@ -47,6 +47,7 @@ class Order(db.Model):
         self.height = height
         self.color = color
 
+
 class User(db.Model):
     # Name of the table in the database
     __tablename__ = 'signin'
@@ -60,12 +61,13 @@ class User(db.Model):
     password = db.Column(db.String(40), nullable=False)
 
     # Constructor to initialize the User object
-    def __init__(self,fName, lName, username, email, password):
+    def __init__(self, fName, lName, username, email, password):
         self.fName = fName
         self.lName = lName
         self.username = username
         self.email = email
         self.password = password
+
 
 # Define the route for the home page
 @app.route('/')
@@ -83,40 +85,51 @@ def booking():
 def order():
     return render_template('ordernow.html')
 
+
 @app.route('/3D Organisers - merch')
 def merch():
     return render_template('merch.html')
+
+
 @app.route('/3D Organisers - termsandconditions')
 def termsandconditions():
     return render_template('termsandconditions.html')
+
 
 @app.route('/3D Organisers - purchase')
 def purchase():
     return render_template('purchase.html')
 
+
 @app.route('/3D Organisers - heart')
 def heart():
     return render_template('heart.html')
+
 
 @app.route('/3D Organisers - lungs')
 def lungs():
     return render_template('lungs.html')
 
+
 @app.route('/3D Organisers - liver')
 def liver():
     return render_template('liver.html')
+
 
 @app.route('/3D Organisers - pancreas')
 def pancreas():
     return render_template('pancreas.html')
 
+
 @app.route('/3D Organisers - kidney')
 def kidney():
     return render_template('kidney.html')
 
+
 @app.route('/3D Organisers - bladder')
 def bladder():
     return render_template('bladder.html')
+
 
 @app.route('/3D Organisers - Cart')
 def cart():
@@ -142,9 +155,11 @@ def navigation_bar():
 def contact():
     return render_template('contactinfo.html')
 
+
 @app.route('/3-D Organisers - purchases')
 def purchases():
     return render_template('purchases.html')
+
 
 @app.route('/3-D Organisers - thankyouPurchases')
 def thankyouPurchases():
@@ -154,6 +169,7 @@ def thankyouPurchases():
 @app.route('/3-D Organisers - Contact Thank you')
 def thankyou():
     return render_template('thankyou.html')
+
 
 @app.route('/Register & Login')
 def signin():
@@ -214,7 +230,8 @@ def ordernow():
         color=color
     )
 
-    # Redirect to the booking page after form submission
+
+# Redirect to the booking page after form submission
 @app.route('/signup', methods=['POST'])
 def signup():
     # Retrieve the first name and last name from the form data
@@ -241,7 +258,6 @@ def signup():
     # Redirect to the booking page after form submission
     return redirect(url_for('products'))
 
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-
