@@ -33,7 +33,7 @@ class Contact(db.Model):
         self.message = message
 
 
-class Order(db.Model):
+class Organ(db.Model):
     __tablename__ = 'organs'
     id = db.Column(db.Integer, primary_key=True)
     organ = db.Column(db.String(100), nullable=False)
@@ -42,6 +42,27 @@ class Order(db.Model):
     color = db.Column(db.String(100), nullable=False)
 
     def __init__(self, organ, weight, height, color):
+        self.organ = organ
+        self.weight = weight
+        self.height = height
+        self.color = color
+
+class Order(db.Model):
+    __tablename__ = 'orders'
+    id = db.Column(db.Integer, primary_key=True)
+    signin_id = db.Column(db.Integer, db.ForeignKey('signin_id'))
+    organ_id = db.Column(db.Integer, db.ForeignKey('organ_id'))
+    organ = db.Column(db.String(100), nullable=False)
+    weight = db.Column(db.String(100), nullable=False)
+    height = db.Column(db.String(100), nullable=False)
+    color = db.Column(db.String(100), nullable=False)
+
+    user = db.relationship('signin', back_populates='order')
+    organ = db.relationship('organs', back_populates='order')
+
+    def __init__(self, organ, weight, height, color, signin_id, organ_id):
+        self.signin_id = signin_id
+        self.organ_id = organ_id
         self.organ = organ
         self.weight = weight
         self.height = height
