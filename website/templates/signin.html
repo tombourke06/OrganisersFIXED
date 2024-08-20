@@ -74,8 +74,36 @@
 </body>
 <footer>
     <p>&copy; 2024 3D Organisers. All rights reserved.</p>
-    <p>Follow us on <a href="#">Twitter</a>, <a href="#">Facebook</a>, and <a href="https://www.instagram.com/3dorganizers/">Instagram</a>,<a href="../templates/termsandcomnditions.html">Terms and Conditions</a></p>
+    <p>Follow us on
+        <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/3dorganizers/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="{{ url_for('termsandconditions')}}" target="_blank"><i class="fas fa-file-contract"></i></a>
+    </p>
 </footer>
+<style>
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        color: white;
+        margin: 0 10px;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    footer a:hover {
+        color: #f44336; /* Change icon color on hover */
+    }
+</style>
 </html>
 <script>
     particlesJS("particles-js", {
