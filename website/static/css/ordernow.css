@@ -3,12 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: black;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: #fff;
-    background-color: #1f1f1f;
+    background-color: black;
     line-height: 1.6;
     overflow-x: hidden;
     text-align: center;
@@ -27,7 +28,7 @@ main {
     font-family: 'Orbitron', sans-serif;
     font-size: 48px;
     font-weight: bold;
-    color: #FF2400;
+    color: black;
     padding: 40px;
 }
 
@@ -37,6 +38,9 @@ main {
     margin: 40px;
     vertical-align: top;
     animation: fadeInUp 1s ease-in-out;
+    background-color: black; /* Set the box background to black */
+    padding: 20px; /* Add padding inside the container */
+    border-radius: 15px; /* Optional: adjust border-radius if you want rounded corners */
 }
 
 .image-container img {
