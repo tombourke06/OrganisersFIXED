@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - 3D Organisers</title>
-    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="../static/css/Your_Cart.css">
+    <link rel="stylesheet" href="../static/css/NavBar.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <style>
-        /* Pop-up code */
         .popup {
             position: relative;
             display: inline-block;
@@ -52,7 +51,6 @@
     </style>
 </head>
 <body>
-    <!-- Header and Navigation -->
     <header>
         <div class="navbar">
             <h1 class="logo">3D Organisers</h1>
@@ -73,14 +71,12 @@
             <p>Height: {{ height }}</p>
             <p>Color: {{ color }}</p>
 
-            <!-- Cart items will be dynamically inserted here -->
             <div class="cart-total">
                 <p>Total: $<span id="total-amount">0.00</span></p>
             </div>
             <button class="checkout-btn">Proceed to Booking</button>
         </div>
 
-        <!-- Pop-up functionality -->
         <div class="popup" onclick="myFunction()">Submit
             <span class="popuptext" id="myPopup">Order Sent</span>
         </div>
@@ -94,7 +90,6 @@
     </script>
 </body>
 <head>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -121,11 +116,11 @@
     }
 
     footer a:hover {
-        color: #f44336; /* Change icon color on hover */
+        color: #f44336;
     }
 </style>
 
-<div id="particles-js"></div> <!-- Particle Effect Background -->
+<div id="particles-js"></div>
 <script>
     particlesJS("particles-js", {
             "particles": {
@@ -172,12 +167,4 @@
             },
         });
 </script>
-<head>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-
-
 </html>
