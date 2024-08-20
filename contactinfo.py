@@ -156,15 +156,8 @@ def thankyou():
     return render_template('thankyou.html')
 
 @app.route('/Register & Login')
-def sign_in():
+def signin():
     return render_template('signin.html')
-
-
-@app.route('/Sign Up')
-def sign_up():
-    return render_template('signup.html')
-
-
 
 
 # Define the route to handle form submission
