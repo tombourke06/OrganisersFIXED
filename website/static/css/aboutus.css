@@ -1,14 +1,3 @@
-/* Base styles */
-body {
-    font-family: 'Orbitron', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
-    background-size: 500% 500%;
-    animation: gradientBackground 40s ease infinite;
-}
 @keyframes gradientBackground {
             0% {
                 background-position: 0% 50%;
@@ -63,11 +52,22 @@ header {
 }
 
 h1, h2 {
-    font-family: 'Orbitron', sans-serif;
+    color: #f44336;
     text-align: center;
     margin-top: 20px;
-    color: #f44336
 }
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(270deg, #ADD8E6, #00FFFF, #89CFF0, #1F51FF, #0096FF, #7DF9FF, #4169E1, #87CEEB, #87CEFA, #1e90ff, #00bfff, #00ccff);
+    background-size: 500% 500%;
+    animation: gradientBackground 40s ease infinite;
+}
+
 #particles-js {
     position: absolute;
     width: 100%;
