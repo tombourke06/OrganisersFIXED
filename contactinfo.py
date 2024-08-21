@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 
 # Database configuration test
@@ -19,13 +19,12 @@ app.config['SECRET_KEY'] = 'root'
 db = SQLAlchemy(app)
 
 
-# Define the User model
 class Contact(db.Model):
     __tablename__ = 'contactpage'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False, unique=True)
-    message = db.Column(db.Text(), nullable=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    message = db.Column(db.Text, nullable=False)
 
     def __init__(self, name, email, message):
         self.name = name
@@ -35,58 +34,62 @@ class Contact(db.Model):
 
 class Organ(db.Model):
     __tablename__ = 'organs'
-    id = db.Column(db.Integer, primary_key=True)
-    organ = db.Column(db.String(100), nullable=False)
-    weight = db.Column(db.String(100), nullable=False)
-    height = db.Column(db.String(100), nullable=False)
-    color = db.Column(db.String(100), nullable=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    organ = db.Column(db.Text, nullable=False)
+    weight = db.Column(db.Text, nullable=False)
+    height = db.Column(db.Text, nullable=False)
+    colour = db.Column(db.Text, nullable=False)
 
-    def __init__(self, organ, weight, height, color):
+    orders = db.relationship('Order', back_populates='organ', cascade="all, delete-orphan")
+
+    def __init__(self, organ, weight, height, colour):
         self.organ = organ
         self.weight = weight
         self.height = height
-        self.color = color
+        self.colour = colour
 
-class Order(db.Model):
-    __tablename__ = 'orders'
-    id = db.Column(db.Integer, primary_key=True)
-    signin_id = db.Column(db.Integer, db.ForeignKey('sign_in_id'))
-    organ_id = db.Column(db.Integer, db.ForeignKey('organ_id'))
-    organ = db.Column(db.String(100), nullable=False)
-    weight = db.Column(db.String(100), nullable=False)
-    height = db.Column(db.String(100), nullable=False)
-    color = db.Column(db.String(100), nullable=False)
-
-
-
-
-    def __init__(self, organ, weight, height, color, sign_in_id, organ_id):
-        self.signin_id = sign_in_id
-        self.organ_id = organ_id
-        self.organ = organ
-        self.weight = weight
-        self.height = height
-        self.color = color
 
 class User(db.Model):
-    # Name of the table in the database
     __tablename__ = 'signin'
-    # Primary key column
-    id = db.Column(db.Integer, primary_key=True)
-    # Column for the first name, cannot be null
-    fName = db.Column(db.String(40), nullable=False)
-    lName = db.Column(db.String(40), nullable=False)
-    username = db.Column(db.String(40), nullable=False)
-    email = db.Column(db.String(40), nullable=False)
-    password = db.Column(db.String(40), nullable=False)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    fName = db.Column(db.Text, nullable=False)
+    lName = db.Column(db.Text, nullable=False)
+    username = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    password = db.Column(db.Text, nullable=False)
 
-    # Constructor to initialize the User object
-    def __init__(self,fName, lName, username, email, password):
+    orders = db.relationship('Order', back_populates='user', cascade="all, delete-orphan")
+
+    def __init__(self, fName, lName, username, email, password):
         self.fName = fName
         self.lName = lName
         self.username = username
         self.email = email
         self.password = password
+
+
+class Order(db.Model):
+    __tablename__ = 'orders'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    signin_id = db.Column(db.Integer, db.ForeignKey('signin.id'), nullable=False)
+    organ_id = db.Column(db.Integer, db.ForeignKey('organs.id'), nullable=False)
+    email = db.Column(db.Text, nullable=False)
+    organ_name = db.Column(db.Text, nullable=False)
+    weight = db.Column(db.Text, nullable=False)
+    height = db.Column(db.Text, nullable=False)
+    colour = db.Column(db.Text, nullable=False)
+
+    user = db.relationship('User', back_populates='orders')
+    organ = db.relationship('Organ', back_populates='orders')
+
+    def __init__(self, signin_id, organ_id, email, organ_name, weight, height, colour):
+        self.signin_id = signin_id
+        self.organ_id = organ_id
+        self.email = email
+        self.organ_name = organ_name
+        self.weight = weight
+        self.height = height
+        self.colour = colour
 
 # Define the route for the home page
 @app.route('/')
@@ -185,9 +188,7 @@ def sign_in():
 def sign_up():
     return render_template('signup.html')
 
-@app.route('/Register')
-def Register():
-    return render_template('signup.html')
+
 
 
 # Define the route to handle form submission
@@ -218,60 +219,102 @@ def enter_details():
 # Define the route to handle form submission
 @app.route('/ordernow', methods=['POST'])
 def ordernow():
-    organ = request.form.get('organ')
+    signin_id = session.get('signin_id')
+
+    if not signin_id:
+        print('User not logged in.')
+        return redirect(url_for('signin'))
+
+    organ_name = request.form.get('organ_name')
     weight = request.form.get('weight')
     height = request.form.get('height')
-    color = request.form.get('color')
+    colour = request.form.get('colour')
 
-    # Create a new User object with the form data
-    new_order = Order(organ=organ, weight=weight, height=height, color=color)
+    organ = Organ.query.filter_by(organ=organ_name).first()
 
-    try:
-        # Attempt to add the new User object to the database
-        db.session.add(new_order)
-        db.session.commit()
-        print('Details entered successfully!')
-    except Exception as e:
-        # If an error occurs, roll back the transaction
-        db.session.rollback()
-        print(f'An error occurred: {e}')
+    if not organ:
+        print('Organ not found.')
+        return redirect(url_for('products'))
 
-    return render_template(
-            "Your_Cart.html",
-        organ=organ,
+    organ_id = organ.id
+
+    user = User.query.get(signin_id)
+    if not user:
+        print('User not found.')
+        return redirect(url_for('signin'))
+
+    email = user.email
+
+    new_order = Order(
+        signin_id=signin_id,
+        organ_id=organ_id,
+        email=email,
+        organ_name=organ_name,
         weight=weight,
         height=height,
-        color=color
+        colour=colour
     )
 
-    # Redirect to the booking page after form submission
+    try:
+        db.session.add(new_order)
+        db.session.commit()
+        print('Order placed successfully!')
+        return render_template(
+            "Your_Cart.html",
+            organ_name=organ_name,
+            weight=weight,
+            height=height,
+            colour=colour
+        )
+    except Exception as e:
+        db.session.rollback()
+        print(f'An error occurred: {e}')
+        return redirect(url_for('products'))
+
+
+@app.route('/Login', methods=['GET', 'POST'])
+def signin():
+    if request.method == 'POST':
+        username_or_email = request.form.get('username')
+        password = request.form.get('password')
+
+        user = User.query.filter(
+            (User.username == username_or_email) |
+            (User.email == username_or_email)
+        ).first()
+
+        if user and user.password == password:
+            session['signin_id'] = user.id
+            session['username'] = user.username
+            print('You have successfully logged in!')
+            return redirect(url_for('index'))
+        else:
+            print('Invalid username/email or password.')
+            return redirect(url_for('signin'))
+
+    return render_template('signin.html')
+
+
 @app.route('/signup', methods=['POST'])
 def signup():
-    # Retrieve the first name and last name from the form data
     fName = request.form.get('fName')
     lName = request.form.get('lName')
     username = request.form.get('username')
     email = request.form.get('email')
     password = request.form.get('password')
 
-    # Create a new User object with the form data
-    new_name = User(fName=fName, lName=lName, username=username, email=email, password=password)
+    new_user = User(fName=fName, lName=lName, username=username, email=email, password=password)
 
     try:
-        # Attempt to add the new User object to the database
-        db.session.add(new_name)
-        # Commit the transaction
+        db.session.add(new_user)
         db.session.commit()
-        print('Name entered successfully!')
+        print('User registered successfully!')
+        return redirect(url_for('products'))
     except Exception as e:
-        # If an error occurs, roll back the transaction
         db.session.rollback()
-        print('An error occurred while booking the class.')
+        print(f'An error occurred: {e}')
+        return redirect(url_for('signup'))
 
-    # Redirect to the booking page after form submission
-    return redirect(url_for('products'))
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-

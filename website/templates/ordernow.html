@@ -95,11 +95,11 @@
         }
     </style>
 <body>
-    <div class="container">
+        <div class="container">
         <h2>Customize Your Organ</h2>
-        <form class="order-form" action="ordernow" method="post">
-            <label for="size">Select Organ:</label>
-            <select id="size" name="size" required>
+        <form class="order-form" action="{{ url_for('ordernow') }}" method="post">
+            <label for="organ_name">Select Organ:</label>
+            <select id="organ_name" name="organ_name" required>
                 <option value="">--Select Organ--</option>
                 <option value="Heart">Heart</option>
                 <option value="Lungs">Lungs</option>
@@ -115,17 +115,15 @@
             <label for="height">Insert Your Height (cm):</label>
             <textarea id="height" name="height" required></textarea>
 
-            <label for="color">Select Your Preferred Colour:</label>
-            <select id="color" name="color" required>
+            <label for="colour">Select Your Preferred Colour:</label>
+            <select id="colour" name="colour" required>
                 <option value="">--Select Your Preferred Colour--</option>
-                <option value="red">Red</option>
-                <option value="green">Green</option>
-                <option value="blue">Blue</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
             </select>
 
-            <a href="{{ url_for('cart') }}">
-                <button type="button">Add to Cart</button>
-            </a>
+            <button type="submit">Add to Cart</button>
         </form>
     </div>
 
