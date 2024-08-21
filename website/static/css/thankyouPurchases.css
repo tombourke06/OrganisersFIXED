@@ -25,7 +25,7 @@ body {
 .home-btn {
     display: inline-block;
     padding: 15px 30px;
-    background-color: blueviolet;
+    background-color: #c62828;
     color: white;
     text-transform: uppercase;
     text-decoration: none;
@@ -37,7 +37,7 @@ body {
 }
 
 .home-btn:hover {
-    background-color: dodgerblue;
+    background-color: #c62828;
 }
 
 #particles-js {
